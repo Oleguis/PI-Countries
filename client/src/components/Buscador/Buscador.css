@@ -1,0 +1,175 @@
+.divPaginadoBuscar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 100%;
+    height:70%;
+    align-items: center;
+    background-color: #4169e115;
+    border-radius: 10px;
+    /* margin-top: 5px; */
+    /* padding-right: 10px; */
+}
+
+.paisesAdesplegar {
+    font-size: 1.5vw;
+    color: white;
+}
+
+.divPaginado {
+    display: flex;
+    width: 25vw;
+    height: 25vw;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    margin: auto;
+    /* background-color: red; */
+}
+.divBuscar {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 30%;
+    height: 90%;
+    background-color: #4169e193;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.divPaginado button {
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 20%;
+    margin: 2px;
+    border: 2px solid yellow;
+    background-color: royalblue;
+}
+
+.divPaginado div:first-of-type {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.divPaginado div:last-of-type {
+    display: flex;
+    flex-direction: row;
+}
+.divPaginado button:focus {
+    background-color:tomato;
+}
+
+.divPaginado button:disabled {
+    background-color: gray;
+    opacity: 0.5;
+}
+.inputSearch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    border: none;
+    background-color: #4169e133;
+    color: white;
+    width: 90%;
+    outline: none;
+    border-radius: 10px;
+    margin-right: 10px;
+    font-size: 2vw;
+}
+
+.inputSearch:focus {
+    background-color: #00000015;
+    border-radius: 5px;
+}
+
+
+.divLupa {
+    display: flex;
+    height: 5vh;
+    border-radius: 50%;
+    align-items: center;
+    background-color: #ffff0063; 
+    /* box-shadow: 0 0 0 0 rgba(0,0,0,.1) ,
+                -1px -1px 0 0 rgba(0,0,0,1) inset,
+                1px 1px 0px 0px #ffffff inset; */
+}
+
+/* .divLupa:hover {
+    background-color: #ffff0063;
+    box-shadow: 0 0 0 0 rgba(0,0,0,.1) inset,
+                1px 1px 0px 0px #000000 inset,
+                -1px -1px 0 0 #ffffff inset;
+} */
+
+.lupa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 23px;
+    border-radius: 10px;
+    background-color: transparent;
+    transform: rotate(45deg);
+}
+
+.lupa:hover {
+    transform: rotate(120deg);
+    cursor: pointer;
+}
+
+.montura {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background-color: var(--lupacolor);
+    border-radius: 50%;
+}
+.cristal {
+    width: 18px;
+    height: 18px;
+    background-image: url(../../assets/img/mapa1.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+    border: 1px solid black;
+    -webkit-animation: rotate 10s linear infinite;
+    animation: rotate 60s linear infinite;
+}
+
+.cristal:hover {
+    transform: rotate(-110deg);
+}
+
+.mango {
+    width: 12px;
+    height: 7px;
+    background-color: var(--lupacolor);
+    border-radius: 3px;
+}
+
+.cristalbrillo {
+    display: flex;
+    width: 1px;
+    height: 10px;
+    background-color: #ffffff50;
+    transform: rotate(120deg);
+}
+
+.cristalbrillo:first-child {
+    position:absolute;
+    top: 10px;
+    left:12px;
+}
+
+.cristalbrillo:last-child {
+    position:absolute;
+    top: 7px;
+    left:12px;
+}
+

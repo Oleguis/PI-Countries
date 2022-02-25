@@ -1,0 +1,80 @@
+.configDisplay {
+    display: flex;
+    width: 230px;
+    height: 215px;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 5px;
+    background: linear-gradient(45deg, #ffa500,#0000ff, #ffa500);
+    justify-content: space-around;
+    align-content: center;
+    border-radius: 5px;;
+}
+
+.LinkCard {
+    text-decoration: none;
+}
+
+.divListado {
+    display: flex;
+    width: 235px;
+    height: 215px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.contenedorImagenes {
+    display: flex;
+    flex-direction: row;
+    width: 95%;
+    height: 57%;
+}
+
+.contenedorImagenes img{
+    display: flex;
+    width: 90%;
+    height: 70%;
+}
+
+.configDisplay p {
+    text-align: center;
+    font-size: 14px;
+    width: 98%;
+    color: white;
+    margin: 0;
+    background-color: #ffffff30;
+    border-radius: 12px;
+}
+
+.contenedorImagenes p{
+    font-size: 14px;
+    color: white;
+}
+
+.contenedorBandera, .contenedorEscudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    border-bottom: 1px solid black;
+}
+
+.contenedorLabels {
+    display: flex;
+    width: 98%;
+    height: 38%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedorIds {
+    display: inline-flex;
+    width: 98%;
+}
+.bandera, .escudo {
+    display: flex;
+    padding: 5px;
+}

@@ -1,0 +1,26 @@
+.mapaMundi {
+    display: flex;
+    /* position: relative;
+    top: 50%;
+    left: 50%; */
+    width: calc(100vh * 10 / 100);
+    height: calc(100vh * 8 / 100);
+    background-image: url(../../assets/img/mapa1.jpg);
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(0,0,0,.1) inset,
+                -10px -5px 0 0 rgba(0,0,0,.2) inset,
+                5px 3px 0px 0px rgba(255,255,255,.3) inset;
+    -webkit-animation: rotate 10s linear infinite;
+    animation: rotate 60s linear infinite;
+}
+
+@-webkit-keyframes rotate {
+    from { background-position: left center }
+    to { background-position: -915px center }
+}
+
+@keyframes rotate {
+    from { background-position: left center}
+    to { background-position: -915px center }
+}
