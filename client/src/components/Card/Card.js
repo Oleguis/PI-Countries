@@ -5,7 +5,7 @@ import './Card.css';
 
 function Card({pais}) {
   return (
-    <Link to={`/countries/:${pais.id}`} className={'LinkCard'}>
+    <Link to={`/detalle/:${pais.id}`} className={'LinkCard'}>
     <div className="configDisplay">
         <div className="divListado">
             <div className="contenedorImagenes">

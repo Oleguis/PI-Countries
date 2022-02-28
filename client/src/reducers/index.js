@@ -23,9 +23,10 @@ export default function rootReducer(state = initialState, action) {
 			};
 			
 		case 'GET_ACTIVIDADES':
+			const listaDeAactividades = action.payload.sort((a,b) => a.nombre > b.nombre ? 1: a.nombre < b.nombre ? -1: 0)
 			return {
 				...state,
-				actividadesTuristicas: action.payload,
+				actividadesTuristicas: listaDeAactividades,
 			};
 
 		case 'GET_PAIS_DETALLE':
@@ -43,12 +44,18 @@ export default function rootReducer(state = initialState, action) {
 				...state,
 				paisesADesplegar: action.payload
 			};
-			case 'CAMBIAR_PAGINA':
-				return {
-					...state,
-					cartaInicial: action.payload
-				};
-			default: 
+		case 'CAMBIAR_PAGINA':
+			return {
+				...state,
+				cartaInicial: action.payload
+			};
+		case 'AGREGAR_ACTIVIDAD':
+			console.log('reduce: ', action.payload)
+			return {
+				...state,
+				actividadesTuristicas: [...state.actividadesTuristicas, action.payload]
+			}
+		default: 
             return state;
 	}
 }

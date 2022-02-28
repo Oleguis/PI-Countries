@@ -14,6 +14,7 @@ router.get('/', async (req, res, next)=> {
                 nombre: actividad.nombre,
                 dificultad: actividad.dificultad,
                 temporada: actividad.temporada,
+                duracion: actividad.duracion,
                 paises: actividad.countries.map(ele => ele.id),
                 countries: actividad.countries
             }
@@ -26,7 +27,7 @@ router.get('/', async (req, res, next)=> {
 
 router.get('/', async (req, res, next) => {
     console.log('entró')
-    let allActivitis = await ActiviTur.findAll({include: Country, raw: true})
+    let allActivitis = await ActiviTur.findAll({include: Country})
     if (allActivitis.length > 0 ) return response.send(allActivitis);
     res.status(404).send('No exite datos de actividades turisticas en la base de datos')
 });
@@ -44,6 +45,7 @@ router.post('/', async (req, res, next) => {
             !['verano', 'otoño', 'invierno', 'primavera'].includes(bodyObj.temporada.toLowerCase())) {
                 return res.status(400).send('Error. No se recibio la data correctamente, verifique e intente de nuevo.\nDificultad debe ser de 1 hasta 5. Temporada debe ser : "Verano", "Otoño", "Invierno" ó "Primavera"')
             }
+        if (!bodyObj.duracion || typeof Number(bodyObj.duracion) !== 'number') bodyObj.duracion = 1;
         const seekActividad = await ActiviTur.findOne({where: {nombre: bodyObj.nombre},
             include: {
                 model:Country,
@@ -57,17 +59,6 @@ router.post('/', async (req, res, next) => {
         if (seekActividad) return res.status(400).json(`Error:. Actividad ${bodyObj.nombre} ya existe en la base de datos`)
         const newActividad = await ActiviTur.create(bodyObj)
         await newActividad.addCountry(bodyObj.countriesId)
-        
-        // let datos = await ActiviTur.findOne({where: {nombre: bodyObj.nombre},
-        //     include: {
-        //         model:Country,
-        //         attributes: ['id','nombrecorto'],
-        //         through: {
-        //             attributes: [],
-        //         },
-        //     },
-        //     raw: true,
-        // })
         res.send(newActividad)
     } catch (error) {
         next(error)

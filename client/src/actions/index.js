@@ -1,5 +1,20 @@
 import axios from 'axios';
 
+export function agregar_actividad (actividad){
+    return async function (dispatch){
+        try {
+            const respuesta = axios.post('http://localhost:3001/APi/turismo', actividad);
+            console.log(respuesta.status, respuesta.result)
+            // if (respuesta.status == 200) {
+                return dispatch({type: 'AGREGAR_ACTIVIDAD', payload: actividad});
+            // }
+        } catch (error) {
+            alert(error)
+        }
+    }
+}
+
+
 export function get_paises () {
     return async function (dispatch) {
         try {
@@ -37,5 +52,11 @@ export function display_config(displayConfig) {
 export function cambiar_pagina (nroPagina) {
     return function (dispatch) {
         return dispatch({type: 'CAMBIAR_PAGINA', payload: nroPagina })
+    }
+}
+
+export function ocultar_configuraciones (ocultar) {
+    return function (dispatch) {
+        return dispatch({type: 'CAMBIAR_PAGINA', payload: ocultar })
     }
 }

@@ -9,12 +9,12 @@ function InitialPage({chageState}) {
             <img src={'../../assets/img/banderas.webp'} alt={'#'} ></img>
         </div>
         <div className="video-overlay"></div>
-        <div className="video-content">
+        <form onKeyUp={chageState} className="video-content">
             <h1>Proyecto Individual</h1>
             <h1>Countries</h1>
-            <h4>Realizado por: Jorge Nuñez</h4>
+            <h3>Realizado por: Jorge Nuñez</h3>
             <button onClick={chageState}>Continuar</button>
-        </div>
+        </form>
     </div>
   )
 }

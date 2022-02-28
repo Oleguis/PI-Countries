@@ -8,6 +8,7 @@ import LandingPage from './components/InitialPage/InitialPage'
 import Cards from "./components/Cards/Cards";
 import Opciones from "./components/Opciones/Opciones";
 import { get_actividades, get_paises } from "./actions";
+import PaisDetalle from "./components/PaisDetalle/PaisDetalle";
 
 
 
@@ -30,9 +31,9 @@ export default function App() {
 			<LandingPage chageState={chageState}/> :
 			<React.Fragment>
 				<NavBar />
-				<Opciones />
 				<Routes>
 					<Route exact path="/" element={<Cards />} />
+					<Route path="/detalle" element={<PaisDetalle />} />
 					<Route path="/Turismo" element={<ActiviTurs />} />
 				</Routes>
 			</React.Fragment>

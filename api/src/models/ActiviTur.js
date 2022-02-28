@@ -17,6 +17,9 @@ module.exports = (sequelize) => {
             type: DataTypes.STRING(1), //ENUM('1', '2', '3', '4', '5'),
             allowNull: false,
         },
+        duracion: {
+            type: DataTypes.INTEGER,
+        },
         temporada: {
             type: DataTypes.STRING(10), //ENUM('Verano', 'Otoño', 'Invierno', 'Primavera'),
             allowNull: false,

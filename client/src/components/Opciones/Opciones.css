@@ -23,17 +23,6 @@
     }
 }
 
-.divConfiguracion button {
-    color: black;
-    font-weight: bold;
-    width: 90%;
-    height: 50px;
-    border-radius: 10px;
-    margin-left: 10px;
-}
-.divConfiguracion button:hover {
-    background-color: royalblue;
-}
 .divConfiguracion::-webkit-scrollbar {
     width: 10px;
 }

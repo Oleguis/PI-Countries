@@ -3,7 +3,6 @@ body {
     padding: 0;
     width: 100vw;
     height: 100vh;
-    background-repeat: no-repeat;
     background-size:inherit;
     background-image: url(./assets/img/paises.jpg);
     background-repeat: no-repeat;
