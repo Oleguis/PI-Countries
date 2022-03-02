@@ -22,13 +22,13 @@ function PaisDetalle() {
                                 <div className='divImagenBandera'>
                                     <img className='detalleBandera' src = {`${paisDetalle.bandera}`} alt='Sin Bandera'></img>
                                 </div>
-                                <p className='detalleNcorto'>Bandera</p>
+                                <p id='detallePbandera'>Bandera</p>
                             </div>
                             <div className="detalleContenedorEscudo">
                                 <div className='divImagenEscudo'>
                                     <img className='detalleEscudo' src = {`${paisDetalle.escudo}`} alt='Sin Escudo'></img>
                                 </div>
-                                <p className='detalleNcorto'>Escudo</p>
+                                <p id='detallePescudo'>Escudo</p>
                             </div>
                         </div>
                         <div className="detalleContenedorLabels">
@@ -72,7 +72,7 @@ function PaisDetalle() {
                     <h3>Lista de actividades</h3>
                     {listaDeActividades.length > 0 ?
                         <>
-                            {listaDeActividades.map((actividad, pos) => <p key={'list' + actividad.id}>{pos + 1 + '.- ' + actividad.nombre}</p>)}
+                            {listaDeActividades.map((actividad, pos) => <p key={'list' + actividad.id}>{pos + 1 + '.- ' + actividad.nombre + ', Dif.: ' + actividad.dificultad + ', Dur.: ' + actividad.duracion + ' meses, Temp.: ' + actividad.temporada}</p>)}
                         </>
                     :
                         <p key={'sinData'}>Sin actividades</p>

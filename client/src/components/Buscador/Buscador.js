@@ -14,8 +14,10 @@ function Buscador() {
 
     function buscarUnPais(e){
         e.preventDefault();
-        dispatch(get_pais_detalle(paisABuscar))
-        setpaisABuscar('')
+        if (paisABuscar !== '') {
+            dispatch(get_pais_detalle(paisABuscar))
+            setpaisABuscar('')
+        }else alert('Campo de busqueda no puede estar vacio')
     }
     
     return (
