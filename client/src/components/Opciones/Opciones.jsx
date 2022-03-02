@@ -64,41 +64,41 @@ export default function Opciones() {
         <div className="ordenadoPor divConfig">Ordernar por
             <li key={'l1'+1000}>
                 <input id="orden1" type="radio" className="cbOrdenar" defaultChecked={displayConfig.ordenadoPor == 1 ? "checked": null} name="ordenar" onChange={cambiarCheck} value={1}/>
-                <label>Por Id (letra)</label>
+                <label for='orden1'>Por Id (letra)</label>
             </li>
             <li key={'l1'+1001}>
                 <input id="orden2" type="radio" className="cbOrdenar" defaultChecked={displayConfig.ordenadoPor == 2 ? "checked": null} name="ordenar" onChange={cambiarCheck} value={2}/>
-                <label>Por Id (Nro)</label>
+                <label for='orden2'>Por Id (Nro)</label>
             </li>
             <li key={'l1'+1002}>
                 <input id="orden3" type="radio" className="cbOrdenar" defaultChecked={displayConfig.ordenadoPor == 3 ? "checked": null} name="ordenar" onChange={cambiarCheck} value={3}/>
-                <label>Por Nombre</label>
+                <label for='orden3'>Por Nombre</label>
             </li>
             <li key={'l1'+1003}>
                 <input id="orden4" type="radio" className="cbOrdenar" defaultChecked={displayConfig.ordenadoPor == 4 ? "checked": null} name="ordenar" onChange={cambiarCheck} value={4}/>
-                <label>Por Continente</label>
+                <label for='orden4'>Por Continente</label>
             </li>
             <li key={'l1'+1004}>
                 <input id="orden5" type="radio" className="cbOrdenar" defaultChecked={displayConfig.ordenadoPor == 5 ? "checked": null} name="ordenar" onChange={cambiarCheck} value={5}/>
-                <label>Por Población</label>            
+                <label for='orden5'>Por Población</label>            
             </li>
         </div>
         <div className="ordenadoTipo divConfig">Tipo de Ordernardo
             <li key={'l1'+1005}>
                 <input id="tipo1" type="radio" className="tpOrdenar" name="tipo" defaultChecked={displayConfig.tipoOrdenado == 1 ? "checked": null} onChange={cambiarCheck} value={1}/>
-                <label>Ascendente</label>
+                <label for='tipo1'>Ascendente</label>
             </li>
             <li key={'l1'+1006}>
                 <input id="tipo2" type="radio" className="tpOrdenar" name="tipo" defaultChecked={displayConfig.tipoOrdenado == 2 ? "checked": null} onChange={cambiarCheck} value={2}/>
-                <label>Descendente</label>
+                <label for='tipo2'>Descendente</label>
             </li>
         </div>
         <section className="filtradoPor divConfig">Filtrar por Continente
             {continentes.map((cont,pos) => {
                 return (
                     <li key={'CT' + cont + pos}>
-                        <input id="${cont}" type="checkbox" className="OptionContinente" defaultChecked={displayConfig.continentes.includes(cont) ? "checked": null} onChange={cambiarCheck} name="continentes" value={pos}/>
-                        <label>{cont}</label>
+                        <input id={cont} type="checkbox" className="OptionContinente" defaultChecked={displayConfig.continentes.includes(cont) ? "checked": null} onChange={cambiarCheck} name="continentes" value={pos}/>
+                        <label for={cont}>{cont}</label>
                     </li>
                 )
             })}
@@ -107,8 +107,8 @@ export default function Opciones() {
             {actividadesTuristicas.map((actividad, pos) => {
                 return (
                     <li key={'AT' + actividad.id}>
-                        <input id="${actividad.nombre.trim().replace(' ','_')}" type="checkbox" onChange={cambiarCheck} defaultChecked={displayConfig.actividades.includes(actividad.nombre) ? "checked": null} className="OptionActividad" name="actividades" value={pos}/>
-                        <span onClick={cambiarCheck} name="actividades" value={pos}>{actividad.nombre.trim()}</span>
+                        <input id={actividad.nombre.trim().replace(' ','_')} type="checkbox" onChange={cambiarCheck} defaultChecked={displayConfig.actividades.includes(actividad.nombre) ? "checked": null} className="OptionActividad" name="actividades" value={pos}/>
+                        <label for={actividad.nombre.trim().replace(' ','_')} onClick={cambiarCheck} name="actividades" value={pos}>{actividad.nombre.trim()}</label>
                     </li>
                 )
             })}

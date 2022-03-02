@@ -122,12 +122,12 @@ function ActiviTurs() {
                                 return (
                                     <>
                                         <li key={pais.continente + pos} className='tipoContinente' >{continenteActual}</li>
-                                        <li key={pais.id + pos} className='tipoPais'><input type="checkbox" name='countriesId' value={pos} onChange={changeSelection}></input>{pais.nombrecorto}</li>
+                                        <li key={pais.id + pos} className='tipoPais'><input id={pais.id} type="checkbox" name='countriesId' value={pos} onChange={changeSelection}/><label for={pais.id}>{pais.nombrecorto}</label></li>
                                     </>
                                 )
                             }else return (
                                 <>  
-                                    <li key={pais.id + pos} className='tipoPais'><input type="checkbox" name='countriesId' value={pos} onChange={changeSelection}></input>{pais.nombrecorto}</li>
+                                    <li key={pais.id + pos} className='tipoPais'><input id={pais.id} type="checkbox" name='countriesId' value={pos} onChange={changeSelection}/><label for={pais.id}>{pais.nombrecorto}</label></li>
                                 </>
                             )
                         })}

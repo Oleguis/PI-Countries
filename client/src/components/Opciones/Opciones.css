@@ -60,3 +60,9 @@
 .tpOrdenar {
     margin-left: 15px;
 }   
+
+:checked + label {
+    color: yellow;
+    font-size: 22px;
+    /* background-color: #4169e1; */
+}
