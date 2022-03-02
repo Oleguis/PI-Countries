@@ -1,15 +1,35 @@
 import axios from 'axios';
 
+export function get_actividades () {
+    return async function (dispatch) {
+        try {
+            const response = await axios(`http://localhost:3001/api/turismo`);
+            return dispatch({type: 'GET_ACTIVIDADES', payload: response.data});                
+        } catch (error) {
+            alert(error)
+        }
+    }
+}
+
 export function agregar_actividad (actividad){
     return async function (dispatch){
         try {
-            const respuesta = axios.post('http://localhost:3001/APi/turismo', actividad);
-            console.log(respuesta.status, respuesta.result)
-            // if (respuesta.status == 200) {
-                return dispatch({type: 'AGREGAR_ACTIVIDAD', payload: actividad});
-            // }
+            const response = await axios.post('http://localhost:3001/APi/turismo', actividad);
+            return dispatch({type: 'AGREGAR_ACTIVIDAD', payload: response.data});
         } catch (error) {
             alert(error)
+        }
+    }
+}
+
+
+export function get_pais_detalle (paisABuscar='VEN') {
+    return async function (dispatch) {
+        try {
+            const response = await axios(`http://localhost:3001/api/countries/${paisABuscar}`);
+            return dispatch({type: 'GET_PAIS_DETALLE', payload: response.data});                
+        } catch (error) {
+            alert(`Error el la busqueda de:\n${paisABuscar} No encontrado`)
         }
     }
 }
@@ -20,17 +40,6 @@ export function get_paises () {
         try {
             const response = await axios(`http://localhost:3001/api/countries`);
             return dispatch({type: 'GET_PAISES', payload: response.data});                
-        } catch (error) {
-            alert(error)
-        }
-    }
-}
-
-export function get_actividades () {
-    return async function (dispatch) {
-        try {
-            const response = await axios(`http://localhost:3001/api/turismo`);
-            return dispatch({type: 'GET_ACTIVIDADES', payload: response.data});                
         } catch (error) {
             alert(error)
         }

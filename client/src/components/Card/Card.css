@@ -5,7 +5,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     margin: 5px;
-    background: linear-gradient(45deg, #ffa500,#0000ff, #ffa500);
+    background: linear-gradient(-45deg, #ffa500,#0000ff, #ffa500);
     justify-content: space-around;
     align-content: center;
     border-radius: 5px;;

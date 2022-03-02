@@ -1,0 +1,58 @@
+.divPaginadoBuscar {
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    top: 11%;
+    left:22%;
+    width: 77%;
+    height: 45px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    padding: 0 10px;
+    z-index: 10;
+    background-color: #00008b33;
+}
+
+.paisesAdesplegar {
+    font-size: 1.5vw;
+    color: white;
+    width: 250px;
+}
+
+.divPaginado {
+    display: flex;
+    width: 250px;
+    justify-content: space-evenly;
+    border-radius: 10px;
+}
+
+.divPaginado button {
+    width: 30px;
+    height: 30px;
+    color: white;
+    border-radius: 20%;
+    margin: 2px;
+    border: 2px solid yellow;
+    background-color: royalblue;
+}
+
+.divPaginado div:first-of-type {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+}
+
+.divPaginado div:last-of-type {
+    display: flex;
+    flex-direction: row;
+}
+.divPaginado button:focus {
+    background-color:tomato;
+}
+
+.divPaginado button:disabled {
+    background-color: gray;
+    opacity: 0.5;
+}

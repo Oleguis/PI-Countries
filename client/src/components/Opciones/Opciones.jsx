@@ -21,7 +21,9 @@ export default function Opciones() {
         if (e.target.name === 'ordenar' && e.target.checked) newDisplayConfig.ordenadoPor = e.target.value;
         else if (e.target.name === 'tipo' && e.target.checked) newDisplayConfig.tipoOrdenado = e.target.value;
         else if (e.target.name === 'continentes') newDisplayConfig.continentes[e.target.value] = e.target.checked;
-        else if (e.target.name === 'actividades') newDisplayConfig.actividades[e.target.value] = e.target.checked;
+        else if (e.target.name === 'actividades') {
+            newDisplayConfig.actividades[e.target.value] = e.target.checked;
+        }
 
         let nuevoDisplayConfig = {
             tipoOrdenado: Number(newDisplayConfig.tipoOrdenado),
@@ -33,7 +35,7 @@ export default function Opciones() {
 
         const paisesADesplegar = paisesOriginal.filter((pais)=>{
             return (nuevoDisplayConfig.continentes.length == 0 || nuevoDisplayConfig.continentes.includes(pais.continente)) &&
-                (nuevoDisplayConfig.actividades.length == 0 || actividadesTuristicas.reduce(((t,e)=>nuevoDisplayConfig.actividades.includes(e.nombre) ? t.concat(e.paises): t),[]).includes(pais.id))
+                (nuevoDisplayConfig.actividades.length == 0 || actividadesTuristicas.reduce(((t,e)=>nuevoDisplayConfig.actividades.includes(e.nombre) ? t.concat(e.countriesId): t),[]).includes(pais.id))
         });
 
         const paisesADesplegarOrdenado = paisesADesplegar.sort((a,b) => {
@@ -94,7 +96,7 @@ export default function Opciones() {
         <section className="filtradoPor divConfig">Filtrar por Continente
             {continentes.map((cont,pos) => {
                 return (
-                    <li key={'CT'+cont.id}>
+                    <li key={'CT' + cont + pos}>
                         <input id="${cont}" type="checkbox" className="OptionContinente" defaultChecked={displayConfig.continentes.includes(cont) ? "checked": null} onChange={cambiarCheck} name="continentes" value={pos}/>
                         <label>{cont}</label>
                     </li>
@@ -104,7 +106,7 @@ export default function Opciones() {
         <div className="filtradoPor divConfig">Filtrar por Actividad Turistica
             {actividadesTuristicas.map((actividad, pos) => {
                 return (
-                    <li key={'AT'+actividad.id}>
+                    <li key={'AT' + actividad.id}>
                         <input id="${actividad.nombre.trim().replace(' ','_')}" type="checkbox" onChange={cambiarCheck} defaultChecked={displayConfig.actividades.includes(actividad.nombre) ? "checked": null} className="OptionActividad" name="actividades" value={pos}/>
                         <span onClick={cambiarCheck} name="actividades" value={pos}>{actividad.nombre.trim()}</span>
                     </li>

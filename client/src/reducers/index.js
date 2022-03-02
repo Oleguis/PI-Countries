@@ -23,10 +23,9 @@ export default function rootReducer(state = initialState, action) {
 			};
 			
 		case 'GET_ACTIVIDADES':
-			const listaDeAactividades = action.payload.sort((a,b) => a.nombre > b.nombre ? 1: a.nombre < b.nombre ? -1: 0)
 			return {
 				...state,
-				actividadesTuristicas: listaDeAactividades,
+				actividadesTuristicas: action.payload.sort((a, b) => a.nombre > b.nombre ? 1 : a.nombre < b.nombre ? -1 : 0),
 			};
 
 		case 'GET_PAIS_DETALLE':
@@ -50,10 +49,12 @@ export default function rootReducer(state = initialState, action) {
 				cartaInicial: action.payload
 			};
 		case 'AGREGAR_ACTIVIDAD':
-			console.log('reduce: ', action.payload)
+			console.log('--------------\n',action.payload,'\n---------------');
+			const newAct = [...state.actividadesTuristicas, action.payload].sort((a,b) => a.nombre > b.nombre ? 1: a.nombre < b.nombre ? -1: 0)
+			console.log('--------------\n',newAct,'\n---------------');
 			return {
 				...state,
-				actividadesTuristicas: [...state.actividadesTuristicas, action.payload]
+				actividadesTuristicas: newAct
 			}
 		default: 
             return state;

@@ -15,7 +15,7 @@ router.get('/', async (req, res, next)=> {
                 dificultad: actividad.dificultad,
                 temporada: actividad.temporada,
                 duracion: actividad.duracion,
-                paises: actividad.countries.map(ele => ele.id),
+                countriesId: actividad.countries.map(ele => ele.id),
                 countries: actividad.countries
             }
         })
@@ -57,7 +57,16 @@ router.post('/', async (req, res, next) => {
             raw: true,
         })
         if (seekActividad) return res.status(400).json(`Error:. Actividad ${bodyObj.nombre} ya existe en la base de datos`)
-        const newActividad = await ActiviTur.create(bodyObj)
+        const newActividad = await ActiviTur.create(bodyObj,{
+            include: {
+                model:Country,
+                attributes: ['id','nombrecorto'],
+                through: {
+                    attributes: [],
+                },
+            },
+            raw: true,
+        })
         await newActividad.addCountry(bodyObj.countriesId)
         res.send(newActividad)
     } catch (error) {

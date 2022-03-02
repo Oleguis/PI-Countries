@@ -1,10 +1,9 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
-import { Link } from 'react-router-dom';
 import { get_pais_detalle } from '../../actions';
-import './Buscador.css'
+import './Search.css'
 
-function Buscador() {
+function Search() {
     const dispatch = useDispatch();
     const [paisABuscar, setpaisABuscar] = useState('')
 
@@ -19,8 +18,7 @@ function Buscador() {
     }
     
     return (
-        <Link to={`/detalle`}>
-        <form className='divBuscar' onSubmit={buscarUnPais}>
+            <form className='divBuscar' onSubmit={buscarUnPais}>
                 <input className="inputSearch" type="text" onChange={handleInputChange} value={paisABuscar}/>
                 <div className="divLupa" onClick={buscarUnPais}>
                     <div className="lupa">
@@ -33,9 +31,8 @@ function Buscador() {
                         <div className="mango"></div>
                     </div>
                 </div>
-        </form>
-        </Link>
+            </form>
     )
 }
 
-export default Buscador
+export default Search

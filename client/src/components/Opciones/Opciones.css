@@ -24,13 +24,16 @@
 }
 
 .divConfiguracion::-webkit-scrollbar {
-    width: 10px;
+    width: 15px;
+    background-color: #4169e133;
 }
 
 .divConfiguracion::-webkit-scrollbar-button {
-    background-color: yellow;
     height: 10px;
-    border-radius: 50%;
+    background-image: url(../../assets/img/scroll-buttom.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .divConfiguracion::-webkit-scrollbar-thumb {

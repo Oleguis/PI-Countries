@@ -1,8 +1,7 @@
 import React, {useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
-import axios from 'axios'
 import './ActiviTurs.css'
-import { agregar_actividad } from '../../actions'
+import { agregar_actividad, get_actividades } from '../../actions'
 
 const paisesPorContinente = {} //"Europe": [], "Oceania": [], "North America": [], "South America": [], "Asia": [], "Africa": [], "Antarctica": []}
 
@@ -10,14 +9,14 @@ const initialState = {
     "nombre": "",
     "dificultad": "1",
     "duracion": "1",
-    "temporada": "1",
+    "temporada": "Otoño",
     "countriesId" : []
 }
 
 function ActiviTurs() {
     const dispatch = useDispatch()
     const [newActividadTuristica, setnewActividadTuristica] = useState(initialState);
-    const {paisesOriginal} = useSelector(store => store);
+    const {paisesOriginal, actividadesTuristicas} = useSelector(store => store);
     const paisesOrdenadosPorContinante = paisesOriginal.sort((a,b)=>{
         if (a.continente+a.id > b.continente+b.id) return 1;
         else if (a.continente+a.id < b.continente+b.id) return -1;
@@ -41,16 +40,24 @@ function ActiviTurs() {
         if (!['verano', 'otoño', 'primavera','invierno'].includes(newActividadTuristica.temporada.toLowerCase())) errores[3] = 'Error: La Temporada debe ser "Verano", "Otoño, "Invierno" ó "Primavera". Por Favor verifique su elección';
         if (newActividadTuristica.countriesId.length == 0) errores[4] = 'Error: No hay paises asociados a esta actividad. Por favor seleccione los paises de la lista de paises.'
         if (errores.join(',') === ',,,,') {
-            console.log(dispatch(agregar_actividad(newActividadTuristica)))
-            alert(`Actividad agregada con éxito\n${newActividadTuristica}`)
+            dispatch(agregar_actividad(newActividadTuristica))
+            alert(`Actividad agregada con éxito\n
+                    Nombre: ${newActividadTuristica.nombre}
+                    Dificultad: ${newActividadTuristica.dificultad}
+                    Duración: ${newActividadTuristica.duracion}
+                    Temporada: ${newActividadTuristica.temporada}
+                    Nro. de paises que la practican: ${newActividadTuristica.countriesId.length}
+            `)
             setnewActividadTuristica({
                 "nombre": "",
                 "dificultad": "1",
                 "duracion": "1",
-                "temporada": "1",
+                "temporada": "Otoño",
                 "countriesId" : []
             })                 
         }else {
+            alert(errores)
+            
             return setmensajeError({error: errores})
         }
     }
@@ -71,13 +78,13 @@ function ActiviTurs() {
                 <div className='divParteIzquierda'>
                     <div className='divActividadNombre'>
                         <label>Nombre de la actividad Turistica: </label>
-                        <input className='inputNombreActividad' name='nombre' type={"text"} placeholder="nombre de la actividad" onChange={changeSelection}></input>
+                        <input className='inputNombreActividad' name='nombre' type={"text"} placeholder="nombre de la actividad" onChange={changeSelection} value={newActividadTuristica.nombre}></input>
                         <span className={mensajeError.error[0] === '' ? 'labelErrorNombreNone': 'labelErrorNombre'}>{mensajeError.error}</span>
                     </div>
                     <div className='divActividadDificultad'>
                         <label>Dificultad de la actividad Turistica: </label>
                         <ol>
-                            <li><input type="radio" name="dificultad" defaultChecked="true" className='dificultadUno' value="1" onChange={changeSelection}></input>Uno</li>
+                            <li><input type="radio" name="dificultad" defaultChecked={"true"} className='dificultadUno' value="1" onChange={changeSelection}></input>Uno</li>
                             <li><input type="radio" name="dificultad" className='dificultadDos' value="2" onChange={changeSelection}></input>Dos</li>
                             <li><input type="radio" name="dificultad" className='dificultadTres' value="3" onChange={changeSelection}></input>Tres</li>
                             <li><input type="radio" name="dificultad" className='dificultadCuatro' value="4" onChange={changeSelection}></input>Cuatro</li>
@@ -119,7 +126,7 @@ function ActiviTurs() {
                                     </>
                                 )
                             }else return (
-                                <>
+                                <>  
                                     <li key={pais.id + pos} className='tipoPais'><input type="checkbox" name='countriesId' value={pos} onChange={changeSelection}></input>{pais.nombrecorto}</li>
                                 </>
                             )

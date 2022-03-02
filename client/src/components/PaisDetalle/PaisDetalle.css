@@ -1,0 +1,173 @@
+.divdetalleDePais {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 12%;
+    left: 20%;
+    width: 50%;
+    height: 85%;
+    justify-content:flex-start;
+    align-items: center;
+    background: linear-gradient(-45deg, #ffa500,#0000ff, #ffa500);
+    margin:0;
+    padding: 0;
+    min-width: 600px;
+    border-radius: 15px;
+}
+
+.detalleTitulo {
+    font-size: larger;
+    color: #ffffff;
+}
+
+.divDetalleTodo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.divDetalleSoloImagenesyData {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+}
+
+.divdetalleDePais p {
+    width: 90%;
+    background-color: #ffffff44;
+    border-radius: 15px;
+    text-align: center;
+    margin: 10px;
+    padding: 0px;
+}
+.DetalleContenedorImagenes {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36%;
+}
+
+.divImagenBandera, .divImagenEscudo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalleContenedorBandera, .detalleContenedorEscudo {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.detalleContenedorBandera {
+    width: 70%;
+}
+
+.detalleContenedorEscudo {
+    align-items: center;
+    width: 50%;
+}
+
+.detalleBandera {
+    width: 80%;
+}
+
+.detalleEscudo {
+    width: 50%;
+}
+
+.divContenedorDatayActividades {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content:space-evenly;
+}
+
+.divDetalleIds {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+}
+
+.divContenedorDatayActividades h3, .divListadeActividades h3 {
+    background-color: #0000ff;
+    width: 90%;
+    text-align: center;
+    color: #ffffff;
+    border-radius: 10px;
+    margin: 5px;
+    padding: 0;
+}
+
+.divDetalleDeDetalles {
+    display: flex;
+    width: 100%;
+}
+
+.divContenedorDatayActividades p, .divListadeActividades p{
+    background: #ffebcd99;
+    padding: 0px 5px;
+    margin: 2% 2px;
+    text-align: right;
+    width: 40%;
+    color: black;
+}
+
+.divListadeActividades p{
+    width: 90%;
+    text-align: left;
+    margin: 2px 0;
+    padding: 0 10px;
+}
+.divContenedorDatayActividades span{
+    background: #ffebcd88;
+    padding: 0px 5px;
+    margin: 2% 2px;
+    text-align: center;
+    width:60%;
+    color: back;
+    border-radius: 10px;
+}
+
+.detalleContenedorLabels {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    height: 67%;
+    background-color: #ffffff44;
+    border-radius: 15px;
+    text-align: left;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.divListadeActividades {
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    align-items: center;
+    margin: 10px 0;
+    background-color: #ffffff44;
+    border-radius: 15px;
+    overflow-y: scroll;
+}
+
+.divListadeActividades::-webkit-scrollbar {
+    width: 10px;
+    background-color: #0000ff73;
+    border-radius: 5px;
+}
+
+#detalleIds {
+    width: 50%;
+    text-align: center;
+    background-color: #ffa50073;
+}

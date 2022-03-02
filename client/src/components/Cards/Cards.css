@@ -10,7 +10,7 @@
     padding-top: 40px;
 }
 .cardsDisplay::-webkit-scrollbar {
-    background-color: gray;
+    background-color: #4169e133;
     width: 15px;
 }
 

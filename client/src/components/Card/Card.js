@@ -5,12 +5,12 @@ import './Card.css';
 
 function Card({pais}) {
   return (
-    <Link to={`/detalle/:${pais.id}`} className={'LinkCard'}>
+    <Link to={`/detalle/${pais.id}`} className={'LinkCard'}>
     <div className="configDisplay">
         <div className="divListado">
             <div className="contenedorImagenes">
                 <div className="contenedorBandera">
-                    <img className='bandera' src = {`${pais.bandera}`}></img>
+                    <img className='bandera' src = {`${pais.bandera}`} alt='Sin bandera'></img>
                     <p className='ncorto'>Bandera</p>
                 </div>
                 <div className="contenedorEscudo">

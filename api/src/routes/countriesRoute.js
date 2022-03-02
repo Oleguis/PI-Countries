@@ -11,6 +11,7 @@ const actividades = [
         nombre: 'Velerismo',
         dificultad: '3',
         temporada: 'otoño',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['BOL','ECU','BRA','ARG','FLK','COL','CHL','GUF','GUY','SUR','PRY','URY','VEN','PER']
     },
     {
@@ -18,6 +19,7 @@ const actividades = [
         nombre: 'Ski',
         dificultad: '5',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['BOL','ECU','BRA','ARG','FLK','COL','CHL','GUF','GUY','SUR','PRY','URY','VEN','PER']
     },
     {
@@ -25,6 +27,7 @@ const actividades = [
         nombre: 'Natación',
         dificultad: '1',
         temporada: 'verano',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['BOL','ECU','GUF','GUY','SUR','PRY','URY','VEN','PER']
     },
     {
@@ -32,6 +35,7 @@ const actividades = [
         nombre: 'Pesca',
         dificultad: '1',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['COD', 'AGO', 'DZA', 'REU', 'COG', 'SLE', 'SSD', 'SYC', 'BWA', 'NAM', 'ETH', 'CMR', 'BDI', 'MLI', 'SHN', 'GNQ', 'LSO', 'COM', 'SOM', 'EGY', 'LBR', 'NGA', 'MOZ', 'ZAF', 'TZA', 'NER', 'MRT', 'MAR', 'ERI', 'GAB', 'ZMB', 'GHA', 'GIN']
     },
     {
@@ -39,6 +43,7 @@ const actividades = [
         nombre: 'Voleiball',
         dificultad: '5',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['TON', 'NIU', 'FJI', 'COK', 'FSM', 'SLB', 'AUS', 'NRU', 'ASM', 'NZL', 'NCL', 'PCN', 'GUM', 'NFK', 'PYF', 'TKL', 'UMI', 'TUV', 'MNP', 'TLS', 'PNG', 'KIR', 'WLF', 'PLW', 'MHL', 'WSM', 'VUT']
     },
     {
@@ -46,6 +51,7 @@ const actividades = [
         nombre: 'BasketBall',
         dificultad: '4',
         temporada: 'invierno',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['TON', 'NIU', 'FJI', 'COK', 'FSM', 'SLB', 'AUS', 'NRU', 'ASM', 'NZL', 'NCL', 'PCN', 'GUM', 'NFK', 'PYF', 'TKL', 'UMI', 'TUV', 'MNP', 'TLS', 'PNG', 'KIR', 'WLF', 'PLW', 'MHL', 'WSM', 'VUT']
     },
     {
@@ -53,6 +59,7 @@ const actividades = [
         nombre: 'Ecoturismo',
         dificultad: '1',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['BOL','ECU','BRA','ARG','FLK','COL','CHL','GUF','GUY','SUR','PRY','URY','VEN','PER']
     },
     {
@@ -60,6 +67,7 @@ const actividades = [
         nombre: 'Patinaje',
         dificultad: '4',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['BOL','ECU','GUF','GUY','SUR','PRY','URY','VEN','PER']
     },
     {
@@ -67,6 +75,7 @@ const actividades = [
         nombre: 'Apicultura',
         dificultad: '5',
         temporada: 'Otoño',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['SUR','PRY','URY','VEN','PER']
     },
     {
@@ -74,6 +83,7 @@ const actividades = [
         nombre: 'Domino',
         dificultad: '1',
         temporada: 'primavera',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['COD', 'AGO', 'DZA', 'REU', 'COG', 'SLE', 'SSD', 'SYC', 'BWA', 'NAM', 'ETH', 'CMR', 'BDI', 'MLI', 'SHN', 'GNQ', 'LSO', 'COM', 'SOM', 'EGY', 'LBR', 'NGA', 'MOZ', 'ZAF', 'TZA', 'NER', 'MRT', 'MAR', 'ERI', 'GAB', 'ZMB', 'GHA', 'GIN']
     },
     {
@@ -81,6 +91,7 @@ const actividades = [
         nombre: 'Caminata en el Bosque',
         dificultad: '5',
         temporada: 'verano',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['TON', 'NIU', 'FJI', 'COK', 'FSM', 'SLB', 'AUS', 'NRU', 'ASM', 'NZL', 'NCL', 'PCN', 'GUM', 'NFK', 'PYF', 'TKL', 'UMI', 'TUV', 'MNP', 'TLS', 'PNG', 'KIR', 'WLF', 'PLW', 'MHL', 'WSM', 'VUT']
     },
     {
@@ -88,6 +99,7 @@ const actividades = [
         nombre: 'Pintura al Oleo',
         dificultad: '1',
         temporada: 'invierno',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['TON', 'NIU', 'FJI', 'COK', 'FSM', 'VEN', 'AUS', 'NRU', 'ASM', 'NZL', 'NCL', 'PCN', 'GUM', 'NFK', 'PYF', 'TKL', 'UMI', 'TUV', 'MNP', 'TLS', 'PNG', 'KIR', 'WLF', 'PLW', 'MHL', 'WSM', 'VUT']
     },
     {
@@ -95,6 +107,7 @@ const actividades = [
         nombre: 'Motociclismo',
         dificultad: '4',
         temporada: 'verano',
+        duracion: ['1','2','3','4','5','3','2'][Math.floor(Math.random()*10 % 7)],
         countryId : ['VEN', 'COL']
     },
 ]
